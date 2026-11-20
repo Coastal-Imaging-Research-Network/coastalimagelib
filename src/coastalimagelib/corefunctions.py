@@ -834,18 +834,18 @@ class CameraData(object):
             # World to local
             extrinsics_out[0], extrinsics_out[1] = localTransformPoints(
                 self.origin,
-                1,
                 self.local_extrinsics[0],
-                self.local_extrinsics[1]
+                self.local_extrinsics[1],
+                1
             )
             extrinsics_out[3] = self.local_extrinsics[3] + self.origin[2]
         else:
             # local to world
             extrinsics_out[0], extrinsics_out[1] = localTransformPoints(
                 self.origin,
-                0,
                 self.local_extrinsics[0],
-                self.local_extrinsics[1]
+                self.local_extrinsics[1],
+                0
             )
             extrinsics_out[3] = self.local_extrinsics[3] - self.origin[2]
 
